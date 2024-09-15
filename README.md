@@ -1,55 +1,53 @@
-# Проект 0. Угадай число
+# Project 0. Guess the Number
 
-## Оглавление  
-[1. Описание проекта](.README.md#Описание-проекта)  
-[2. Какой кейс решаем?](.README.md#Какой-кейс-решаем)  
-[3. Краткая информация о данных](.README.md#Краткая-информация-о-данных)  
-[4. Этапы работы над проектом](.README.md#Этапы-работы-над-проектом)  
-[5. Результат](.README.md#Результат)    
-[6. Выводы](.README.md#Выводы) 
+## Table of Contents  
+[1. Project Description](#project-description)  
+[2. What Problem Are We Solving?](#what-problem-are-we-solving)  
+[3. Brief Information About the Data](#brief-information-about-the-data)  
+[4. Results](#results)  
+[5. Conclusions](#conclusions)  
 
-### Описание проекта    
-Угадать загаданное компьютером число за минимальное число попыток.
+### Project Description    
+Guess the number chosen by the computer with the minimum number of attempts.
 
-:arrow_up:[к оглавлению](_)
+:arrow_up:[Back to Table of Contents](#table-of-contents)
 
+### What Problem Are We Solving?    
+The task is to write a program that guesses the number with the minimum number of attempts.
 
-### Какой кейс решаем?    
-Нужно написать программу, которая угадывает число за минимальное число попыток
+**Competition Conditions:**  
+- The computer selects an integer between 0 and 100, and we need to guess it. By "guess," we mean "write a program that guesses the number."
+- The algorithm considers whether the random number is greater or less than the target number.
 
-**Условия соревнования:**  
-- Компьютер загадывает целое число от 0 до 100, и нам его нужно угадать. Под «угадать», подразумевается «написать программу, которая угадывает число».
-- Алгоритм учитывает информацию о том, больше ли случайное число или меньше нужного нам.
+**Quality Metric**     
+Results are evaluated by the average number of attempts over 1000 repetitions.
 
-**Метрика качества**     
-Результаты оцениваются по среднему количеству попыток при 1000 повторений
+**What We Practice**     
+We learn to write good Python code.
 
-**Что практикуем**     
-Учимся писать хороший код на python
+### Brief Information About the Data
+The input data is a number in the half-open interval [1, 101).
 
+:arrow_up:[Back to Table of Contents](#table-of-contents)
 
-### Краткая информация о данных
-....
-  
-:arrow_up:[к оглавлению](.README.md#Оглавление)
+### Results  
+The binary search algorithm is several orders of magnitude more efficient than random guessing. The complexity of such an algorithm is $O(\log(N))$.
 
+Random guessing does not guarantee that the answer will be found in a reasonable number of attempts. However, due to uniform distribution, the correct number will be found on average in about 100 attempts, since the distribution is uniform. The complexity of such an algorithm is Amort. $O(N)$. Moreover, simple brute-force of all values provides greater efficiency $O(N)$.
 
-### Этапы работы над проектом  
-....
+In the general case, when the probability of each number appearing is equal $p(\omega) = \frac{1}{N}$, where $|\Omega(\omega)| = N$, the probability that the number will not appear is $q(\omega) = 1 - p(\omega)$. Thus, the number will be found with 99% probability if $N = 100$.
 
-:arrow_up:[к оглавлению](.README.md#Оглавление)
+$p(\omega) = 0.01$
 
+$1 - q(\omega)^n \geqslant 0.99 \Rightarrow n \geqslant 466$
 
-### Результаты:  
-....
+:arrow_up:[Back to Table of Contents](#table-of-contents)
 
-:arrow_up:[к оглавлению](.README.md#Оглавление)
+### Conclusions  
+Using pseudo-random numbers for "guessing" results in a low probability of finding the correct answer on the first attempt. But on average, it takes $O(N)$, which does not differ from the brute-force algorithm.
 
+Binary search provides a stable result of $O(\log(N))$.
 
-### Выводы:  
-....
+:arrow_up:[Back to Table of Contents](#table-of-contents)
 
-:arrow_up:[к оглавлению](.README.md#Оглавление)
-
-
-Если информация по этому проекту покажется вам интересной или полезной, то я буду очень вам благодарен, если отметите репозиторий и профиль ⭐️⭐️⭐️-дами
+If you find the information in this project interesting or useful, I would greatly appreciate it if you could star the repository and profile ⭐️⭐️⭐️.
